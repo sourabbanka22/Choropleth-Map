@@ -1,0 +1,72 @@
+body {
+  min-height: 100vh;
+  width: 99%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#main {
+  width: 85vw;
+  padding: 1rem;
+  margin: 2rem auto;
+  background: #ffffff;
+  animation: addEffect 0.4s 0.75s cubic-bezier(.22,-0.3,.68,1.44) both;
+}
+
+#main #title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 0rem;
+}
+#main #description {
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+#main #tooltip {
+  position: absolute;
+  border-radius: 4px;
+  color: #eee;
+  background: #252525;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+#main svg g path.county {
+  stroke: #252525;
+  stroke-width: 0.1px;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+#main svg g path.county:hover {
+  stroke-width: 2px;
+}
+@media (max-width: 700px) {
+  #main #title {
+    font-size: 1.8rem;
+  }
+  #main #description {
+    font-size: 1.2rem;
+  }
+  #main #tooltip {
+    font-size: 1rem;
+  }
+}
+
+@keyframes addEffect {
+  0% {
+    transform: translateY(-20vh);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
